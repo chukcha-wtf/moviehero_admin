@@ -1,5 +1,5 @@
 class TicketNumber < ActiveRecord::Base
-  self.table_name = 'TicketNumber'
+  self.table_name = 'ticketNumber'
   self.primary_key = 'ticketNumber'
   
   belongs_to :ticket, :foreign_key => 'ticketId'

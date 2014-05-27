@@ -1,5 +1,5 @@
 class Screen < ActiveRecord::Base
-  self.table_name = 'Screen'
+  self.table_name = 'screen'
 
   has_many :showings, :foreign_key => 'screenId'
   has_many :ticket_numbers, :foreign_key => 'screenId'

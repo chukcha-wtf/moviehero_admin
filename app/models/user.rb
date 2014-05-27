@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  self.table_name = 'USER'
+  self.table_name = 'user'
 
   belongs_to :mailing_address, :class_name => 'Address', :dependent => :destroy, :foreign_key => 'mailingAddressId'
   belongs_to :billing_information, :class_name => 'BillingInformation', :dependent => :destroy, :foreign_key => 'billingInformationId'

@@ -1,5 +1,5 @@
 class Showing < ActiveRecord::Base
-  self.table_name = 'Showing'
+  self.table_name = 'showing'
 
   belongs_to :movie, :foreign_key => 'movieId'
   belongs_to :screen, :foreign_key => 'screenId'

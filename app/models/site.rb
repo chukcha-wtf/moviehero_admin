@@ -1,5 +1,5 @@
 class Site < ActiveRecord::Base
-  self.table_name = 'SITE'
+  self.table_name = 'site'
 
   belongs_to :circuit, :foreign_key => 'circuitId', :class_name => 'Circuit'
   has_many :register_stations, :foreign_key => 'siteId', :class_name => 'RegisterStation'

@@ -1,5 +1,5 @@
 class Ticket < ActiveRecord::Base
-  self.table_name = 'Ticket'
+  self.table_name = 'ticket'
   self.inheritance_column = '_type'
 
   # has_many :order_items, -> { where type: 'ticket' }, :foreign_key => 'foreignId'

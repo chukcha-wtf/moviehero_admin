@@ -1,5 +1,5 @@
 class OrderItem < ActiveRecord::Base
-  self.table_name = 'OrderItem'
+  self.table_name = 'orderItem'
   self.inheritance_column = '_type'
 
   belongs_to :order, :foreign_key => 'orderId'

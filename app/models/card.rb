@@ -1,5 +1,5 @@
 class Card < ActiveRecord::Base
-  self.table_name = 'Card'
+  self.table_name = 'card'
   self.inheritance_column = '_type'
 
 

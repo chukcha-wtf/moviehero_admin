@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  self.table_name = 'ORDER'
+  self.table_name = 'order'
 
   belongs_to :user, :foreign_key => 'userId'
   belongs_to :circuit, :foreign_key => 'circuitId'

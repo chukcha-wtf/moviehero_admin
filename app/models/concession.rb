@@ -1,5 +1,5 @@
 class Concession < ActiveRecord::Base
-  self.table_name = 'ConcessionItem'
+  self.table_name = 'concessionItem'
   self.inheritance_column = '_type'
 
   has_many :order_items, -> { where type: 'concession' }, :foreign_key => 'foreignId'
