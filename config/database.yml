@@ -23,7 +23,7 @@ test:
 
 production:
   <<: *default
-  user: masterhero
-  password: rustyandsara
-  database: met
-  host: movieheroes.ctxvwhgp8ybd.us-west-1.rds.amazonaws.com
+  user: root
+  password: 
+  database: met_dev
+  socket: /var/run/mysqld/mysqld.sock
