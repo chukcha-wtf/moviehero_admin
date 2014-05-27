@@ -78,6 +78,22 @@ RailsAdmin.config do |config|
   end
   config.model 'OrderItem' do
     navigation_label 'Orders'
+    list do
+      field :id
+      field :type
+      field :price
+      field :description
+      field :orderable
+    end
+    edit do
+      field :description
+      field :price
+      field :type
+      field :foreignId
+      field :orderable do
+        visible false
+      end
+    end
   end
   config.model 'Payment' do
     navigation_label 'Orders'
@@ -100,4 +116,19 @@ RailsAdmin.config do |config|
 
 
 
+end
+
+require 'rails_admin/adapters/active_record'
+
+class RailsAdmin::Adapters::ActiveRecord::Association
+  def model_lookup_with_hack
+    if name == :orderable && model.name == "OrderItem"
+      [Ticket, Membership, Concession]
+    else
+      model_lookup_without_hack
+    end
+  end
+
+  alias_method_chain :model_lookup, :hack
+  
 end

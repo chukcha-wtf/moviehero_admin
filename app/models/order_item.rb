@@ -8,7 +8,7 @@ class OrderItem < ActiveRecord::Base
   
   def read_attribute attr_name
     if attr_name.to_sym == :orderable_type
-      self.class.write_polymorphic_type(super(:type))
+      self.class.read_polymorphic_type(super(:type))
     else
       super(attr_name)
     end
@@ -16,7 +16,7 @@ class OrderItem < ActiveRecord::Base
   
   def write_attribute attr_name, attr_value
     if attr_name.to_sym == :orderable_type
-      super(:type, self.class.read_polymorphic_type(attr_value))
+      super(:type, self.class.write_polymorphic_type(attr_value))
     else
       super(attr_name, attr_value)
     end
@@ -28,6 +28,14 @@ class OrderItem < ActiveRecord::Base
   
   def self.write_polymorphic_type type
     type.underscore
+  end
+  
+  def orderable_type
+    read_attribute :orderable_type
+  end
+  
+  def orderable_type= value
+    write_attribute :orderable_type, value
   end
   
 end
