@@ -9,3 +9,5 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 after "deploy:restart", "puma:restart"
 
 set :deploy_to, '/home/movieheroes/www'
+
+set :linked_files, %w{config/secrets.yml}
